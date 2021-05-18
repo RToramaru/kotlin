@@ -2,6 +2,7 @@ package com.example.filmes.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.filmes.R
@@ -20,10 +21,15 @@ class MainActivity : AppCompatActivity() {
         movieListViewModel = ViewModelProvider.NewInstanceFactory().create(MovieListViewModel::class.java)
         movieListViewModel.init()
         initObserver()
+        loadingVisibility(true)
     }
 
     private fun initObserver(){
         movieListViewModel.moviesList.observe(this, Observer {list ->
+            if (list.isNotEmpty()) {
+                populateList(list)
+                loadingVisibility(false)
+            }
             populateList(list)
         })
     }
@@ -35,4 +41,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun loadingVisibility(isLoading:Boolean){
+        progressBar.visibility = if(isLoading) View.VISIBLE else View.GONE
+    }
 }
