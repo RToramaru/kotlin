@@ -1,4 +1,4 @@
-package com.example.filmes.view
+package com.example.filmes.presenter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,13 +6,13 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.filmes.R
-import com.example.filmes.model.Movie
-import com.example.filmes.viewmodel.MovieListViewModel
+import com.example.filmes.domain.Movie
+import com.example.filmes.framework.api.viewmodel.MovieListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var movieListViewModel:MovieListViewModel
+    private lateinit var movieListViewModel: MovieListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,12 +25,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initObserver(){
-        movieListViewModel.moviesList.observe(this, Observer {list ->
+        movieListViewModel.moviesList.observe(this, Observer { list ->
             if (list.isNotEmpty()) {
                 populateList(list)
                 loadingVisibility(false)
             }
-            populateList(list)
         })
     }
 
@@ -42,6 +41,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadingVisibility(isLoading:Boolean){
-        progressBar.visibility = if(isLoading) View.VISIBLE else View.GONE
+        progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 }

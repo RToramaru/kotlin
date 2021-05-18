@@ -1,10 +1,12 @@
-package com.example.filmes.repository
+package com.example.filmes.implementation
 
 import android.util.Log
-import com.example.filmes.api.MovieRestApiTask
-import com.example.filmes.model.Movie
+import com.example.filmes.framework.api.MovieRestApiTask
+import com.example.filmes.data.MovieDataSource
+import com.example.filmes.domain.Movie
 
-class MovieRepository(private val movieRestApiTask: MovieRestApiTask) {
+
+class MovieDataSourceImplementation(private val movieRestApiTask: MovieRestApiTask): MovieDataSource {
 
     companion object{
         const val TAG = "MovieRepository"
@@ -12,8 +14,8 @@ class MovieRepository(private val movieRestApiTask: MovieRestApiTask) {
 
     private val movieList = arrayListOf<Movie>()
 
-    fun getAllMovies():List<Movie> {
-        val request = movieRestApiTask.retrofitApi().getAllMovie().execute()
+    override fun getAllMovies(): List<Movie> {
+        val request = movieRestApiTask.retrofitApi().getAllMovies().execute()
         if (request.isSuccessful) {
             request.body()?.let {
                 movieList.addAll(it)
@@ -25,5 +27,4 @@ class MovieRepository(private val movieRestApiTask: MovieRestApiTask) {
         }
         return movieList
     }
-
 }
