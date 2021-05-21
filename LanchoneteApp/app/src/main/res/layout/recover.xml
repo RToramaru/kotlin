@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/ic_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="17dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="310dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/recover_tv_recover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/recover_tv_recover"
+            android:textSize="36sp"
+            android:textColor="@color/red"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/recover_tv_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/login_tv_user"
+            android:textColor="@color/red"
+            android:textSize="14sp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/recover_tf_user"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:textSize="16sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/recover_tv_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register_tv_email"
+            android:textSize="14sp"
+            android:textColor="@color/red"
+            android:layout_marginTop="10dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/recover_tf_email"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:textSize="16sp"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="140dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/recover_btn_access"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/login_tv_login"
+                android:textColor="@color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/recover_btn_recover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="2dp"
+                android:text="@string/recover_btn_recover"
+                app:cornerRadius="15dp"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp"
+                android:layout_marginStart="160dp"
+                android:backgroundTint="@color/red"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
