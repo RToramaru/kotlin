@@ -30,4 +30,21 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="login_txt_logged">PERMANECER CONECTADO</string>
+    <string name="settings_sw_night_mode">Modo noturno</string>
+    <string name="hint_tf_language">Idioma</string>
+    <string name="text_tv_preferences">Preferências</string>
+    <string name="tv_password_user">Senha:</string>
+    <string name="tv_user_name">Nome:</string>
+
+
+    <string-array name="languages">
+        <item>English</item>
+        <item>Turkish</item>
+        <item>Korean</item>
+        <item>Chinese</item>
+        <item>French</item>
+        <item>Spanish</item>
+        <item>Italian</item>
+        <item>German</item>
+    </string-array>
 </resources>

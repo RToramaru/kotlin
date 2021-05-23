@@ -1,17 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.SettingsFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="settings"
-        android:textSize="50sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/settings_tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/tv_user_name"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/red"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/settings_tf_user_name"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/settings_iv_user"
+        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_tv_user_name"
+        android:backgroundTint="@color/red"
+        android:textColor="@color/red" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/settings_iv_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:src="@tools:sample/avatars"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/settings_tv_user_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/tv_password_user"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_tf_user_name"
+        android:textColor="@color/red"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/settings_tf_user_password"
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/settings_iv_user"
+        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_tv_user_password"
+        android:inputType="textPassword"
+        android:backgroundTint="@color/red"
+        android:textColor="@color/red"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/settings_tv_preferences"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/settings_tf_user_password"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/text_tv_preferences"
+        android:textSize="26sp"
+        android:textColor="@color/red"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style = "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:id="@+id/settings_tf_language"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="@string/hint_tf_language"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_tf_user_password"
+        app:startIconDrawable="@drawable/ic_language"
+        android:textColorHint="@color/red"
+        android:backgroundTint="@color/red">
+
+        <AutoCompleteTextView
+            android:id="@+id/settings_tf_auto_complete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:textColor="@color/red"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/settings_sw_night_mode"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/settings_tf_language"
+        android:text="@string/settings_sw_night_mode"
+        android:textColor="@color/red"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
