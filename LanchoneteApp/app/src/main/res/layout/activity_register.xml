@@ -8,22 +8,25 @@
     android:background="@drawable/ic_background">
 
     <LinearLayout
+        android:id="@+id/linear_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="17dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="300dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714"
+        tools:layout_editor_absoluteX="36dp"
+        android:layout_marginStart="10dp">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/register_tv_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/register_tv_register"
-            android:textSize="36sp"
             android:textColor="@color/red"
-            android:textStyle="bold"/>
+            android:textSize="36sp"
+            android:textStyle="bold" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/register_tv_user"
@@ -39,7 +42,8 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:backgroundTint="@color/red"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/register_tv_email"
@@ -55,7 +59,8 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:backgroundTint="@color/red"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/register_tv_password"
@@ -64,42 +69,48 @@
             android:text="@string/login_tv_password"
             android:textSize="14sp"
             android:textColor="@color/red"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/red"/>
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/register_tf_password"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:textColor="@color/red"
-            android:textSize="16sp"/>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="60dp">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/register_btn_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:text="@string/register_btn_login"
-                android:textColor="@color/white" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/register_btn_create"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="2dp"
-                android:text="@string/register_btn_create"
-                app:cornerRadius="15dp"
-                app:strokeColor="@color/white"
-                app:strokeWidth="2dp"
-                android:layout_marginStart="40dp"
-                android:backgroundTint="@color/red"/>
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-
+            android:textSize="16sp"
+            android:backgroundTint="@color/red"/>
     </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/register_btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="684dp"
+        android:background="@android:color/transparent"
+        android:text="@string/register_btn_login"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.992" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/register_btn_create"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:backgroundTint="@color/red"
+        android:elevation="2dp"
+        android:text="@string/register_btn_create"
+        android:textColor="@color/white"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.814"
+        app:layout_constraintStart_toEndOf="@+id/register_btn_login"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
