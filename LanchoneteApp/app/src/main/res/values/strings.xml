@@ -35,6 +35,7 @@
     <string name="text_tv_preferences">Preferências</string>
     <string name="tv_password_user">Senha:</string>
     <string name="tv_user_name">Nome:</string>
+    <string name="setting_btn_logout">Sair</string>
 
 
     <string-array name="languages">

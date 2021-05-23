@@ -104,4 +104,13 @@
         app:layout_constraintTop_toBottomOf="@id/settings_tf_language"
         android:text="@string/settings_sw_night_mode"
         android:textColor="@color/red"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setting_btn_logout"
+        app:layout_constraintTop_toBottomOf="@id/settings_sw_night_mode"
+        android:background="@android:color/transparent"
+        android:textColor="@color/red"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
