@@ -63,7 +63,7 @@
             android:textSize="16sp"
             android:backgroundTint="@color/red"
             app:endIconMode="password_toggle"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

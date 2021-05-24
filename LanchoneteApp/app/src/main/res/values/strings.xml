@@ -37,6 +37,10 @@
     <string name="tv_user_name">Nome:</string>
     <string name="setting_btn_logout">Sair</string>
     <string name="insert_photo">Inserir foto</string>
+    <string name="upload_image">carregar foto</string>
+    <string name="text_tv_info">Informações</string>
+    <string name="text_subtract">-</string>
+    <string name="text_sum">+</string>
 
 
     <string-array name="languages">

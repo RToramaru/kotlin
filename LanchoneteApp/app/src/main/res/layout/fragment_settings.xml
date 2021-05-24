@@ -4,127 +4,128 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.SettingsFragment">
+    tools:context=".fragments.SettingsFragment"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp">
 
-    <ImageView
-        android:id="@+id/image_logo"
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/settings_iv_user"
+        android:layout_width="70dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_person"
+        android:tint="@color/white"
+        android:scaleType="fitCenter"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/settings_btn_camera" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/settings_btn_camera"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:foregroundGravity=""
-        android:src="@drawable/ic_logo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:drawableBottom="@drawable/ic_camera"
+        android:drawableTint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/settings_btn_file"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:drawableTint="@color/white"
+        android:drawableBottom="@drawable/ic_file"
+        app:layout_constraintTop_toBottomOf="@id/settings_btn_camera"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/settings_tv_user_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_tv_info"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/settings_iv_user"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/settings_tv_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/image_logo"
-        app:layout_constraintStart_toStartOf="parent"
         android:text="@string/tv_user_name"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/red"/>
+        app:layout_constraintTop_toBottomOf="@id/settings_tv_user_info"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/settings_tf_user_name"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toStartOf="@+id/settings_iv_user"
-        app:layout_constraintHorizontal_bias="0.117"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/settings_tv_user_name"
-        android:backgroundTint="@color/red"
-        android:textColor="@color/red" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/settings_iv_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:src="@tools:sample/avatars"
-        app:layout_constraintDimensionRatio="16:9"
-        app:layout_constraintTop_toBottomOf="@id/image_logo"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/settings_btn_camera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/settings_iv_user"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/insert_photo"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/settings_tv_user_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
         android:text="@string/tv_password_user"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settings_tf_user_name"
-        android:textColor="@color/red"/>
+        app:layout_constraintTop_toBottomOf="@id/settings_tf_user_name"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/settings_tf_user_password"
-        android:layout_height="40dp"
         android:layout_width="match_parent"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toStartOf="@+id/settings_iv_user"
-        app:layout_constraintHorizontal_bias="0.117"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/settings_tv_user_password"
+        android:layout_height="42dp"
         android:inputType="textPassword"
-        android:backgroundTint="@color/red"
-        android:textColor="@color/red"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_tv_user_password"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/settings_tv_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/settings_tf_user_password"
         android:text="@string/prompt_email"
-        android:textColor="@color/red"/>
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_tf_user_password"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/settings_tf_email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/settings_tv_email"
-        android:backgroundTint="@color/red"
-        android:textColor="@color/red"/>
+        android:layout_height="42dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_tv_email"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/settings_tv_preferences"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        app:layout_constraintTop_toBottomOf="@id/settings_tf_email"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="38dp"
         android:text="@string/text_tv_preferences"
         android:textSize="26sp"
-        android:textColor="@color/red"/>
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_tf_email" />
 
     <com.google.android.material.textfield.TextInputLayout
-        style = "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:id="@+id/settings_tf_language"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="68dp"
         android:hint="@string/hint_tf_language"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/settings_tv_preferences"
         app:startIconDrawable="@drawable/ic_language"
-        android:textColorHint="@color/red"
-        android:backgroundTint="@color/red">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_tv_preferences">
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteTextView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="61dp"
             android:layout_weight="1"
-            android:inputType="none"
-            android:textColor="@color/red"/>
+            android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -132,16 +133,19 @@
         android:id="@+id/settings_sw_night_mode"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintTop_toBottomOf="@id/settings_tf_language"
         android:text="@string/settings_sw_night_mode"
-        android:textColor="@color/red"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_tf_language"/>
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/setting_btn_logout"
-        app:layout_constraintTop_toBottomOf="@id/settings_sw_night_mode"
         android:background="@android:color/transparent"
-        android:textColor="@color/red"/>
+        android:text="@string/setting_btn_logout"
+        android:textColor="@color/red"
+        tools:layout_editor_absoluteX="-53dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_sw_night_mode"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
