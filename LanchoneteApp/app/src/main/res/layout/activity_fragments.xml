@@ -12,10 +12,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/menu"
-        app:itemBackground="@color/white"
-        app:itemIconTint="@color/black"
-        app:itemTextColor="@color/black"
-        android:padding="5dp" />
+        android:padding="0dp"
+        app:itemBackground="@color/black"
+        app:itemIconTint="@color/item_navigation_color"
+        app:itemTextColor="@color/item_navigation_color"/>
 
     <FrameLayout
         android:id="@+id/fragment_container"

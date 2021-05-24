@@ -12,10 +12,12 @@ class RegisterActivity : AppCompatActivity() {
         register_btn_login.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
         register_btn_create.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

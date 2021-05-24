@@ -53,10 +53,7 @@
             android:layout_marginTop="10dp"
             android:text="@string/login_tv_password"
             android:textColor="@color/red"
-            android:textSize="14sp"
-
-            app:endIconMode="password_toggle"
-            android:inputType="textPassword"/>
+            android:textSize="14sp" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_tf_password"
@@ -64,7 +61,9 @@
             android:layout_height="wrap_content"
             android:textColor="@color/red"
             android:textSize="16sp"
-            android:backgroundTint="@color/red"/>
+            android:backgroundTint="@color/red"
+            app:endIconMode="password_toggle"
+            android:inputType="textPassword"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

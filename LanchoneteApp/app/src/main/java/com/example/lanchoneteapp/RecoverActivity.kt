@@ -12,10 +12,12 @@ class RecoverActivity : AppCompatActivity() {
         recover_btn_access.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
         recover_btn_recover.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }
